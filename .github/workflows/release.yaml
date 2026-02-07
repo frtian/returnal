@@ -92,7 +92,7 @@ env:
   # Enable these to deploy on every push to `main`.
   # Make sure to set up any enabled targets. Builds will ignore warnings.
   # Warning: If you use private repositories, this will eat through your available worker minutes quickly.
-  continuous_deployment_to_itch: false
+  continuous_deployment_to_itch: true
   continuous_deployment_to_github_pages: false
 
 jobs:
@@ -369,7 +369,8 @@ jobs:
               --fix-permissions \
               --userversion='${{ needs.get-version.outputs.version }}' \
               tmp/"${package}"/* \
-              '${{ env.itch_page }}':"${package#package-}"
+              '${{ env.itch_page }}':"$
+              {package#package-}"
           done
 
   # Deploy to GitHub Pages.

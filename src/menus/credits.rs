@@ -32,7 +32,7 @@ fn spawn_credits_menu(mut commands: Commands) {
 
 fn created_by() -> impl Bundle {
     grid(vec![
-        ["Joe Shmoe", "Implemented alligator wrestling AI"],
+        ["fr_tian", "Design, Music, Code and all the rest."],
         ["Jane Doe", "Made the music for the alien invasion"],
     ])
 }
